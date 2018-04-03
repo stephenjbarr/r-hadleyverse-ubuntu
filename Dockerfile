@@ -4,7 +4,4 @@ FROM ubuntu:xenial-20180228
 
 RUN apt-get update && apt-get install -y \
     gdebi libxml2-dev libssl-dev libcurl4-openssl-dev libopenblas-dev r-base r-base-dev
-RUN R --vanilla << EOF \
-install.packages(c("tidyverse","data.table","dtplyr","devtools","roxygen2","bit64"), repos = "https://cran.rstudio.com/") \
-q() \
-EOF    
+RUN R --vanilla install.packages(c("tidyverse","data.table","dtplyr","devtools","roxygen2","bit64"), repos = "https://cran.rstudio.com/")
